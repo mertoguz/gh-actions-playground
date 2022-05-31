@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Send greeting
+    - name: Print raw varibles file
       run: | 
         echo "Raw variables file"
         cat variables.txt
@@ -20,3 +20,8 @@ jobs:
       with:
         someSecret: ${{ secrets.SOME_SECRET }}
         fileName: 'variables.txt'
+        
+    - name: Print varibles file after variables replacement
+      run: | 
+        echo "Variables file after replacement"
+        cat variables.txt
