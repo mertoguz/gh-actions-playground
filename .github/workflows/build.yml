@@ -25,3 +25,10 @@ jobs:
       run: | 
         echo "Variables file after replacement"
         cat variables.txt
+        
+    - name: Commit and Push 
+      run: | 
+        mv variables.txt replaced.txt
+        git add replaced.txt
+        git commit -m "variables replaced"
+        git push
