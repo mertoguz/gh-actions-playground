@@ -1,0 +1,22 @@
+name: Build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Send greeting
+      run: | 
+        echo "Raw variables file"
+        cat variables.txt
+  
+    - name: Replace variables
+      uses: mertoguz/variable-replace@main
+      with:
+        someSecret: ${{ secrets.SOME_SECRET }}
+        fileName: 'variables.txt'
