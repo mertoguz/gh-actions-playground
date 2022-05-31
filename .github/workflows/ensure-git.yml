@@ -1,0 +1,12 @@
+name: Git check
+
+on:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Ensure Git exists in VM
+      run: git --version
