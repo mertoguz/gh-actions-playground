@@ -29,6 +29,8 @@ jobs:
     - name: Commit and Push 
       run: | 
         mv variables.txt replaced.txt
+        git config --global user.email "devops@mert.com"
+        git config --global user.name "GH DevOps"
         git add replaced.txt
         git commit -m "variables replaced"
         git push
