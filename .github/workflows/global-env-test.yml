@@ -1,4 +1,4 @@
-name: Build
+name: Test global env works
 
 on:
   workflow_dispatch:
@@ -7,7 +7,7 @@ env:
   SOME_SECRET: 'Not a secret, lazy to rename...'
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
 
     steps:
